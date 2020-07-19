@@ -6,6 +6,19 @@ const dogBreedsArr = require('./data/dog-breeds')
 // Get spaced arguments as array
 const getArgs = text => text.split(' ').splice(1)
 
+// Help message
+const helpMessage = `
+Simple API BOT
+/fortune - get a random fortune
+/cat - random cat image
+/cat <text> - random cat image with text
+/dogbreeds - get a list of dog breeds
+/dog <breed> - random dog image of specified breed
+`
+exports.help = (ctx, next) => {
+  ctx.reply(helpMessage)
+}
+
 // Get random fortune
 const getFortune = () => axios.get('http://yerkee.com/api/fortune')
 
