@@ -8,15 +8,15 @@ const getArgs = text => text.split(' ').splice(1)
 
 // Help message
 const helpMessage = `
-Simple API BOT
+*Simple API BOT*
 /fortune - get a random fortune
 /cat - random cat image
-/cat <text> - random cat image with text
+/cat \`<text>\` - random cat image with text
 /dogbreeds - get a list of dog breeds
-/dog <breed> - random dog image of specified breed
+/dog \`<breed>\` - random dog image of specified breed
 `
 exports.help = (ctx, next) => {
-  ctx.reply(helpMessage)
+  ctx.reply(helpMessage, { parse_mode: 'markdown' })
 }
 
 // Get random fortune
